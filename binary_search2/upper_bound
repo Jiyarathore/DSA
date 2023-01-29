@@ -1,0 +1,45 @@
+// upper_bound() is a standard library function in C++ defined 
+// in the header . It returns an iterator pointing to the first 
+// element in the range [first, last] that is greater than value, 
+// or last if no such element is found. The elements in the range 
+// shall already be sorted or at least partitioned with respect to val
+
+// upper_bound(v.begin(), v.end(), val);
+
+
+#include <bits/stdc++.h>
+using namespace std;
+
+int upper_bound(vector<int>&v, int element){
+    int l=0,h=v.size()-1;
+    int mid;
+    while(h-l > 1){
+        int mid = (h+l)/2;
+        if(v[mid] <= element){
+            l=mid+1;
+        }
+        else{
+            h=mid;
+        }
+    }
+    if(v[l]>element){
+        return l;
+    }
+    if(v[h]>element){
+        return h;
+    }
+    return -1;
+}
+
+int main(){
+    int n;
+    cin>>n;
+    vector<int>v(n);
+    for(int i=0;i<n;i++){
+        cin>>v[i];
+    }
+    int element;
+    cin>>element;
+    int ub=upper_bound(v,element);
+    cout<<ub<<" "<<(ub!=-1 ? v[ub]: -1)<<endl;
+}
