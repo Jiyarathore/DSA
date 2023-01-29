@@ -1,0 +1,46 @@
+// The lower_bound() method in C++ is used to return an iterator pointing 
+//to the first element in the range [first, last) which has a value not 
+//less than val. This means that the function returns an iterator pointing 
+// to the next smallest number just greater than or equal to that number
+
+// inbuild function of lower bound is 
+//  low1 = std::lower_bound(v.begin(), v.end(), 30);
+
+//but we will implement it using binary search
+
+#include <bits/stdc++.h>
+using namespace std;
+
+int lower_bound(vector<int>&v, int element){
+    int l=0,h=v.size()-1;
+    int mid;
+    while(h-l > 1){
+        int mid = (h+l)/2;
+        if(v[mid] < element){
+            l=mid+1;
+        }
+        else{
+            h=mid;
+        }
+    }
+    if(v[l]>=element){
+        return l;
+    }
+    if(v[h]>=element){
+        return h;
+    }
+    return -1;
+}
+
+int main(){
+    int n;
+    cin>>n;
+    vector<int>v(n);
+    for(int i=0;i<n;i++){
+        cin>>v[i];
+    }
+    int element;
+    cin>>element;
+    int lb=lower_bound(v,element);
+    cout<<lb<<" "<<(lb!=-1 ? v[lb]: -1)<<endl;
+}
