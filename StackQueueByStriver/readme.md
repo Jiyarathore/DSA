@@ -2,3 +2,4 @@
 - https://takeuforward.org/data-structure/implement-queue-using-array/
 - https://takeuforward.org/data-structure/implement-stack-using-single-queue/
 - https://takeuforward.org/data-structure/implement-queue-using-stack/
+- https://takeuforward.org/data-structure/check-for-balanced-parentheses/
