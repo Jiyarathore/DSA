@@ -5,3 +5,4 @@
 - https://takeuforward.org/data-structure/check-for-balanced-parentheses/
 - https://takeuforward.org/data-structure/next-greater-element-using-stack/
 - https://takeuforward.org/data-structure/implement-stack-using-linked-list/
+-https://takeuforward.org/data-structure/implement-queue-using-linked-list/
